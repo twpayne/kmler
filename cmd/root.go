@@ -9,7 +9,19 @@ var rootCmd = &cobra.Command{
 	SilenceUsage:  true,
 }
 
+var config = newConfig()
+
+func init() {
+	config.register(rootCmd)
+}
+
 // Execute executes the root command.
 func Execute() error {
 	return rootCmd.Execute()
+}
+
+func panicOnError(err error) {
+	if err != nil {
+		panic(err)
+	}
 }
