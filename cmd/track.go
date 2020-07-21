@@ -51,6 +51,53 @@ func (c *Config) runTrackCmdE(cmd *cobra.Command, args []string) error {
 	return c.writeOutputString(sb.String())
 }
 
+func (c *Config) makeAltitudeMarksFolder(t track, children []kml.Element) kml.Element {
+	altitudeMarkStyle := kml.SharedStyle("altitudeMark",
+		kml.IconStyle(
+			kml.HotSpot(kml.Vec2{ // FIXME HotSpot does not seem to be respected
+				X:      0.5,
+				Y:      0.5,
+				XUnits: kml.UnitsFraction,
+				YUnits: kml.UnitsFraction,
+			}),
+			kml.Icon(
+				kml.Href(icon.PaletteHref(4, 24)),
+			),
+		),
+		kml.LabelStyle(
+			kml.Scale(0.5),
+		),
+	)
+	ls, ok := t.Geom().(*geom.LineString)
+	if !ok {
+		panic(fmt.Sprintf("%T: unsupported geometry type", t.Geom()))
+	}
+	n := ls.NumCoords()
+	zs := make([]float64, 0, n)
+	for i := 0; i < n; i++ {
+		zs = append(zs, ls.Coord(i)[2])
+	}
+	indexes := salient(zs, 100)
+	placemarks := make([]kml.Element, 0, len(indexes))
+	for _, index := range indexes {
+		coord := ls.Coord(index)
+		placemark := kml.Placemark(
+			kml.Name(fmt.Sprintf("%dm", int(coord[2]+0.5))),
+			kml.StyleURL(altitudeMarkStyle.URL()),
+			kml.Point(
+				kml.AltitudeMode(kml.AltitudeModeAbsolute),
+				kml.Coordinates(kml.Coordinate{
+					Lon: coord[0],
+					Lat: coord[1],
+					Alt: coord[2],
+				}),
+			),
+		)
+		placemarks = append(placemarks, placemark)
+	}
+	return kml.Folder(append(append(children, altitudeMarkStyle), placemarks...)...)
+}
+
 func (c *Config) makeTrackFolder(t track) kml.Element {
 	var (
 		noIconStyle = kml.IconStyle(
@@ -97,6 +144,16 @@ func (c *Config) makeTrackFolder(t track) kml.Element {
 			},
 			[]kml.Element{
 				kml.AltitudeMode(kml.AltitudeModeClampToGround),
+			},
+		),
+		c.makeAltitudeMarksFolder(t,
+			[]kml.Element{
+				kml.Name("Altitude marks"),
+				kml.Style(
+					kml.ListStyle( // FIXME this style does not seem to be respected
+						kml.ListItemType(kml.ListItemTypeCheckHideChildren),
+					),
+				),
 			},
 		),
 	)
