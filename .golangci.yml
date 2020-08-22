@@ -2,7 +2,6 @@ linters:
   enable:
   - asciicheck
   - bodyclose
-  - deadcode
   - depguard
   - dogsled
   - dupl
@@ -41,10 +40,10 @@ linters:
   - typecheck
   - unconvert
   - unparam
-  - unused
   - varcheck
   - whitespace
   disable:
+  - deadcode
   - funlen
   - gochecknoglobals
   - godox
@@ -52,6 +51,7 @@ linters:
   - gomnd
   - lll
   - testpackage
+  - unused
   - wsl
 
 linters-settings:
