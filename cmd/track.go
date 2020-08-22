@@ -86,11 +86,7 @@ func (c *Config) makeAltitudeMarksFolder(t track, children []kml.Element) kml.El
 			kml.StyleURL(altitudeMarkStyle.URL()),
 			kml.Point(
 				kml.AltitudeMode(kml.AltitudeModeAbsolute),
-				kml.Coordinates(kml.Coordinate{
-					Lon: coord[0],
-					Lat: coord[1],
-					Alt: coord[2],
-				}),
+				kml.CoordinatesArray(coord),
 			),
 		)
 		placemarks = append(placemarks, placemark)
