@@ -7,5 +7,6 @@ require (
 	github.com/stretchr/testify v1.6.1
 	github.com/twpayne/go-geom v1.3.2
 	github.com/twpayne/go-kml v1.5.1
+	github.com/twpayne/go-openaip v0.0.0-20200731184930-f2cbbe25b6a0
 	github.com/twpayne/go-xctrack v0.0.0-20200713122109-94a1f4d29e1c
 )
