@@ -130,7 +130,10 @@ github.com/twpayne/go-openaip v0.0.0-20200731184930-f2cbbe25b6a0 h1:a8DiLRPs07ZK
 github.com/twpayne/go-openaip v0.0.0-20200731184930-f2cbbe25b6a0/go.mod h1:VbwZ477TbHfR9W1A6HNtWrgNeb2LaeM9xraAVWqo4G4=
 github.com/twpayne/go-polyline v1.0.0 h1:EA8HPg0MNS62R5D2E8B6zyz2TMkmkXVlQaVBVgY3F5A=
 github.com/twpayne/go-polyline v1.0.0/go.mod h1:ICh24bcLYBX8CknfvNPKqoTbe+eg+MX1NPyJmSBo7pU=
+github.com/twpayne/go-waypoint v0.0.0-20200706203930-b263a7f6e4e8 h1:0DvmyIQBIEYpXJt7Wm242Wn6ePH84FR5wv2Jh/yRgUw=
 github.com/twpayne/go-waypoint v0.0.0-20200706203930-b263a7f6e4e8/go.mod h1:qj5pHncxKhu9gxtZEYWypA/z097sxhFlbTyOyt9gcnU=
+github.com/twpayne/go-waypoint v0.0.0-20200822110510-4f8e6bfac4df h1:lHQRHDelYxGoYOXkBBOCy/eMd+XWcaOnLo9XzIivvAo=
+github.com/twpayne/go-waypoint v0.0.0-20200822110510-4f8e6bfac4df/go.mod h1:qj5pHncxKhu9gxtZEYWypA/z097sxhFlbTyOyt9gcnU=
 github.com/twpayne/go-xctrack v0.0.0-20200713122109-94a1f4d29e1c h1:tnOLFskBUBvKjoTx61xyrADvkIXFtYyytb5z+sJaXuc=
 github.com/twpayne/go-xctrack v0.0.0-20200713122109-94a1f4d29e1c/go.mod h1:QIqcOsERpXFd59qPW4RaFJKgBR8FssaiTq3vTiJVFjE=
 github.com/ugorji/go v1.1.4/go.mod h1:uQMGLiO92mf5W77hV/PUCpI3pbzQx3CRekS0kk+RGrc=
