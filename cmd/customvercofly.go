@@ -37,6 +37,51 @@ func (c *Config) runCustomVercofly2020CmdE(cmd *cobra.Command, args []string) er
 			Latitude:  46.34470,
 			Longitude: 7.86187,
 		},
+		&waypoint.T{
+			ID:        "Bonus_SPECIAL_1",
+			Latitude:  46.05061,
+			Longitude: 7.48015,
+		},
+		&waypoint.T{
+			ID:        "Bonus_SPECIAL_2",
+			Latitude:  46.09672,
+			Longitude: 7.54214,
+		},
+		&waypoint.T{
+			ID:        "Bonus_SPECIAL_",
+			Latitude:  0,
+			Longitude: 0,
+		},
+		&waypoint.T{
+			ID:        "Bonus_SPECIAL_",
+			Latitude:  0,
+			Longitude: 0,
+		},
+		&waypoint.T{
+			ID:        "Bonus_SPECIAL_",
+			Latitude:  0,
+			Longitude: 0,
+		},
+		&waypoint.T{
+			ID:        "Bonus_SPECIAL_",
+			Latitude:  0,
+			Longitude: 0,
+		},
+		&waypoint.T{
+			ID:        "Bonus_SPECIAL_",
+			Latitude:  0,
+			Longitude: 0,
+		},
+		&waypoint.T{
+			ID:        "",
+			Latitude:  0,
+			Longitude: 0,
+		},
+		&waypoint.T{
+			ID:        "",
+			Latitude:  0,
+			Longitude: 0,
+		},
 	)
 
 	renames := map[string]string{
@@ -49,12 +94,14 @@ func (c *Config) runCustomVercofly2020CmdE(cmd *cobra.Command, args []string) er
 		"Cabane_de_la_Tsa":            "Tsa",
 		"Cabane_de_la_Dent_Blanche":   "Dent Blanche",
 		"Cabane_Prafleuri":            "Prafleuri",
-		"Bonus_SUPAIR_1":              "Supair 1",
-		"Bonus_SUPAIR_2":              "Supair 2",
+		"Bonus_SUPAIR_1":              "Selfie",
+		"Bonus_SUPAIR_2":              "Selfie",
 		"Bonus_FOOD_1":                "Food 1",
 		"Bonus_FOOD_2":                "Food 2",
 		"FINISH":                      "Finish",
 		"Bonus_FOOD_3":                "Food 3",
+		"Bonus_SPECIAL_1":             "Swim",
+		"Bonus_SPECIAL_2":             "Selfie",
 	}
 	prefixPaddles := map[string]string{
 		"START":        "go",
