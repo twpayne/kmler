@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"bytes"
-	"io/ioutil"
+	"os"
 	"strings"
 
 	"github.com/spf13/cobra"
@@ -23,7 +23,7 @@ func init() {
 }
 
 func (c *Config) runCustomVercofly2020CmdE(cmd *cobra.Command, args []string) error {
-	waypointData, err := ioutil.ReadFile("data/vercofly-2020/Vercofly2020_COMP.wpt")
+	waypointData, err := os.ReadFile("data/vercofly-2020/Vercofly2020_COMP.wpt")
 	if err != nil {
 		return err
 	}

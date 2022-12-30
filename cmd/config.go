@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"io"
-	"io/ioutil"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -40,7 +39,7 @@ func (c *Config) writeOutput(data []byte) error {
 		return err
 	}
 	//nolint:gosec
-	return ioutil.WriteFile(c.output, data, 0o666)
+	return os.WriteFile(c.output, data, 0o666)
 }
 
 func (c *Config) writeOutputString(s string) error {
