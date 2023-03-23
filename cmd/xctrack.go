@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/twpayne/go-kml"
-	"github.com/twpayne/go-kml/sphere"
+	"github.com/twpayne/go-kml/v3"
+	"github.com/twpayne/go-kml/v3/sphere"
 	"github.com/twpayne/go-xctrack"
 )
 

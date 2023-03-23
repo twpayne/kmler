@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"github.com/twpayne/go-kml"
+	"github.com/twpayne/go-kml/v3"
 	"github.com/twpayne/go-openaip"
 )
 
@@ -89,7 +89,7 @@ func (c *Config) makeAirspaceFolder(oaip *openaip.OpenAIP) kml.Element {
 			polygon := kml.Polygon(
 				kml.OuterBoundaryIs(
 					kml.LinearRing(
-						kml.CoordinatesArray(polygon.Coords...),
+						kml.CoordinatesSlice(polygon.Coords...),
 					),
 				),
 			)

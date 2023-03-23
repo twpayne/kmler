@@ -9,8 +9,8 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/twpayne/go-geom"
-	"github.com/twpayne/go-kml"
-	"github.com/twpayne/go-kml/icon"
+	"github.com/twpayne/go-kml/v3"
+	"github.com/twpayne/go-kml/v3/icon"
 )
 
 var trackCmd = &cobra.Command{
@@ -86,7 +86,7 @@ func (c *Config) makeAltitudeMarksFolder(t track, children []kml.Element) kml.El
 			kml.StyleURL(altitudeMarkStyle.URL()),
 			kml.Point(
 				kml.AltitudeMode(kml.AltitudeModeAbsolute),
-				kml.CoordinatesArray(coord),
+				kml.CoordinatesSlice(coord),
 			),
 		)
 		placemarks = append(placemarks, placemark)

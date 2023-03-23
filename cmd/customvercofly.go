@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"github.com/twpayne/go-kml"
-	"github.com/twpayne/go-kml/icon"
+	"github.com/twpayne/go-kml/v3"
+	"github.com/twpayne/go-kml/v3/icon"
 	"github.com/twpayne/go-waypoint"
 )
 
